@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Don't do it</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto+Condensed&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <img src="img/logo.svg" alt="Don`t do it" class="logo">
+        <nav>
+            <a class="menu_link"> Что будет на курсе?</a>
+            <a class="menu_link"> Вопросы</a>
+            <a class="menu_link"> Автор</a>
+            <a class="menu_link button_black"> Записаться на курс</a>
+        </nav>
+    </header>
+    <div class="content">
+        <div>
+            <h1 class="content_title">Не <span class="colortext">делай</span> это</h1>
+            <p class="content_text"> Онлайн-курс для творческих людей, о том, как управлять своим временем </p>
+            <div class="button_black button">Записаться на курс</div>
+        </div>
+        <img src="img/done.svg" alt="done" class="done">
+    </div>
+    <section class="black_one">
+        <div class="grid_black">
+            <div class="icon">
+                <img src="img/time.svg" alt="time">
+                <p>Для тех, у кого слишком много <br> идей и слишком мало времени</p>
+            </div>
+            <div class="icon">
+                <img src="img/book.svg" alt="book">
+                <p>Метод «списка не дел», который <br> позволит успевать и реализовывать</p>
+            </div>
+            <div class="icon">
+                <img src="img/target.svg" alt="target">
+                <p>Курс научит творческих людей сосредоточиваться</p>
+            </div>
+        </div>
+    </section>
+    <section class="picture">
+        <div class="picture_finanses">
+            <img src="img/finances.svg" alt="image" class="picture_image">
+            <div>
+                <h2 class="picture_heading">Ты не успеешь</h2>
+                <p class="picture_text">Всех творческих людей объединяет одна проблема - отсутствие времени на реализацию идей. Как прибавить суткам часы, рассмотрим в нашем курсе.</p>
+            </div>
+        </div>
+        <div class="picture_blowing">
+            <div>
+            <h2 class="picture_heading">Опять дедлайн</h2>
+            <p class="picture_text">В мире, где столько всего интересного, когда же успевать жить?</p>
+            </div>
+            <img src="img/blowing.svg" alt="Mind blowing" class="picture_image">
+        </div>
+    </section>
+    <section>
+        <h2 class="picture_heading">На курсе ты <span class="colortext">сможешь</span></h2>
+        <div class="grid">
+            <div class="grid_cell">
+                    <img src="img/one.svg" alt="1">
+                    <p class="box_text">Понять, что нужно делать, а что делать не стоит.</p>
+            </div>
+            <div class="grid_cell">
+                    <img src="img/two.svg" alt="2">
+                    <p class="box_text">Перестать себя искусственно ограничивать.</p>
+            </div>
+            <div class="grid_cell">
+                    <img src="img/three.svg" alt="3">
+                    <p class="box_text">Определить сильные стороны и начать использовать слабые.</p>
+            </div>
+            <div class="grid_cell">
+                    <img src="img/four.svg" alt="4">
+                    <p class="box_text">Научиться достигать любой цели <br> в 3 понятных шага.</p>
+            </div>
+            <div class="grid_cell">
+                    <img src="img/five.svg" alt="5">
+                    <p class="box_text">Сотрудничать эффективно <br> и с правильными людьми.</p>
+            </div>
+            <div class="grid_cell">
+                    <img src="img/six.svg" alt="6">
+                    <p class="box_text">Оптимизировать общение с клиентами и проведение совещаний.</p>
+            </div>
+        </div>
+    </section>
+    <section class="need">
+        <h2 class="picture_heading black">Единственное, <br>что нужно <span class="colortext">сделать</span></h2>
+            <form action="php/hander.php" method="get" class="form">
+                <label>
+                    <input type="text" name="name" placeholder="Ваше имя" class="frame">
+                    <input type="text" name="email" placeholder="Email" class="frame">
+                    <select name="activities" class="frame">
+                        <option  value="hide" class="hide">Деятельность</option>
+                        <option value="programmer" class="list">Программист</option>
+                        <option value="designer" class="list">Дизайнер</option>
+                        <option value="marketer" class="list">Маркетолог</option>
+                    </select>
+                </label>
+                <button type="submit" class="button">Записаться на курс</button>
+            </form>
+            <form action="php/hander.php" method="get" class="checkbox">
+                <input type="checkbox" class="custom-checkbox" id="consent" name="consent" value="yes">
+                <label for="consent">Согласен получать информационные материалы о старте курса</label>
+            </form>
+    </section>
+    <section class="face">
+        <img src="img/faсe.jpg" alt="photo">
+        <h3 class="name">Дональд Рос</h3>
+        <p>Типограф, творческий предприниматель и лектор Королевской академии искусств Нидерландов</p>
+        <p class="name_text">Создаю титры к фильмам, шрифты, сложные интерфейсы для смартфонов. Автор собственных креативных проектов, в том числе системы тайм-менеджмента и приложения для смартфонов ToDon’tList.</p>
+    </section>
+    <footer class="footer">
+        <p>Don`t <span class="colortext">do</span> it</p>
+    </footer>
+</body>
+</html>
