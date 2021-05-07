@@ -38,18 +38,16 @@ body
     align-items: center;
     width: 748px;
     padding-left: 178px;
-
 }
 
-.text_h1
+.bottom
 {
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 0.5s ease 0.25s,
-                transform 0.5s ease 0.25s;
+    transition: all 0.5s ease 0.25s;
 }
 
-.loaded .text_h1
+.loaded .bottom
 {
     opacity: 1;
     transform: translateY(0);
@@ -86,16 +84,6 @@ body
 {
     width: 747.49px;
     height: 636.87px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.25s ease 0.25s,
-                transform 0.25s ease 0.25s;
-}
-
-.loaded .done
-{
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .picture
@@ -130,7 +118,6 @@ body
     justify-items: center;
     opacity: 0;
     transition: opacity 0.5s ease 0.5s;
-
 }
 
 .loaded .black_one
@@ -167,6 +154,7 @@ body
     opacity:1;
     transform: 	translateY(0);
 }
+
 .book
 {
     opacity:0;
@@ -193,21 +181,28 @@ body
     opacity:1;
     transform: 	translateY(0);
 }
-/*______________________________________*/
 
-.picture_image {
+.left {
     opacity:0;
     transform: 	translateX(-150px);
-    transition: opacity 1s ease-out 0s,
-    transform 1s ease-out 0s;
+    transition: all 0.8s ease 1s;
 }
 
-#animatedBlock .loaded .picture_image {
+.left._active {
     opacity:1;
-    transform: 	translateY(0);
+    transform: 	translateX(0);
 }
 
-/*_______________________________*/
+.right{
+    opacity:0;
+    transform: 	translateX(150px);
+    transition: all 0.8s ease 1s;
+}
+.right._active {
+      opacity:1;
+      transform: 	translateX(0);
+  }
+
 .picture_heading
 {
     text-align: center;
@@ -237,6 +232,7 @@ body
     height: 694px;
     background: #000000;
     margin: auto;
+
 }
 
 .black
