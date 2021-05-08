@@ -117,7 +117,7 @@ body
     display: flex;
     justify-items: center;
     opacity: 0;
-    transition: opacity 0.5s ease 0.5s;
+    transition: opacity 0.15s ease 0.15s;
 }
 
 .loaded .black_one
@@ -146,7 +146,7 @@ body
     opacity:0;
     transform: 	translateX(-50px);
     transition: opacity 0.5s ease-out 0.5s,
-    transform 0.5s ease-out 0.5s;
+    transform 0.25s ease-out 0.25s;
 }
 
 .loaded .time
@@ -160,7 +160,7 @@ body
     opacity:0;
     transform: 	translateX(-100px);
     transition: opacity 1s ease-out 1s,
-    transform 1s ease-out 1s;
+    transform 0.5s ease-out 0.5s;
 }
 
 .loaded .book
@@ -173,7 +173,7 @@ body
     opacity:0;
     transform: 	translateX(-150px);
     transition: opacity 1s ease-out 1.5s,
-    transform 1s ease-out 1.5s;
+    transform 0.75s ease-out 0.75s;
 }
 
 .loaded .target
@@ -182,26 +182,30 @@ body
     transform: 	translateY(0);
 }
 
-.left {
+.left
+{
     opacity:0;
     transform: 	translateX(-150px);
     transition: all 0.8s ease 1s;
 }
 
-#animatedBlock.loaded.picture .left {
+#animatedBlock.loaded.picture .left
+{
     opacity:1;
     transform: 	translateX(0);
 }
 
-.right{
+.right
+{
     opacity:0;
     transform: 	translateX(150px);
     transition: all 0.8s ease 1s;
 }
-#animatedBlock.loaded.picture .right  {
+#animatedBlock.loaded.picture .right
+{
       opacity:1;
       transform: 	translateX(0);
-  }
+}
 
 .picture_heading
 {
@@ -215,7 +219,6 @@ body
     display: grid;
     grid-template-columns: repeat(3, 358px);
     grid-gap: 30px;
-
 }
 
 .grid_cell
@@ -232,7 +235,6 @@ body
     height: 694px;
     background: #000000;
     margin: auto;
-
 }
 
 .black
