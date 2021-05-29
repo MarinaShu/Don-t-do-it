@@ -8,17 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto+Condensed&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header class="header">
         <div class="header__wrapper">
             <div class="header__logo logo"> Don`t <span class="colortext">do</span> it </div>
             <nav class="menu">
-                <a class="menu__link"> Что будет на курсе?</a>
-                <a class="menu__link"> Вопросы</a>
-                <a class="menu__link"> Автор</a>
+                <a href="#box" class="menu__link js-menu-item"> Что будет на курсе?</a>
+                <a href="#questions" class="menu__link js-menu-item"> Вопросы</a>
+                <a href="#author" class="menu__link js-menu-item"> Автор</a>
                 <a class="menu__button button"> Записаться на курс</a>
             </nav>
-<!--            <div class="menu__burger"></div>-->
+            <!--            <div class="menu__burger"></div>-->
         </div>
     </header>
     <section class="content">
@@ -69,7 +70,7 @@
             </div>
         </section>
     </section>
-    <h2 class="box__subheading center">На курсе ты <span class="colortext">сможешь</span></h2>
+    <h2 id="box" class="box__subheading center">На курсе ты <span class="colortext">сможешь</span></h2>
     <section class="box__wrapper">
         <div class="box">
             <div class="box__cell">
@@ -98,12 +99,12 @@
             </div>
         </div>
     </section>
-    <section class="block">
+    <section id="questions" class="block">
         <h2 class="center">Всё, что вы хотели <span class="colortext">узнать</span></h2>
         <div class="block__down-menu">
             <div class="block__list__one">
                 <h3 class="block__item__middle middle">Как проходит курс?</h3>
-                <p class="block__item__text" > Каждую неделю на протяжении 3 месяцев, вам приходит новый урок на имейл. Проходить уроки, вы можете в комфортном для вас темпе.</p>
+                <p class="block__item__text"> Каждую неделю на протяжении 3 месяцев, вам приходит новый урок на имейл. Проходить уроки, вы можете в комфортном для вас темпе.</p>
                 <div class="block__item__line"></div>
             </div>
             <div class="block__item__plus plus"> </div>
@@ -126,27 +127,27 @@
     </section>
     <section class="box__black">
         <h2 class="box__text_big center">Единственное, что нужно <span class="colortext">сделать</span></h2>
-            <div class="box__wrapper">
-                <form action="php/hander.php" method="get" class="forms">
-                    <section class="form">
-                        <input type="text" name="name" placeholder="Ваше имя" class="frame__size size">
-                        <input type="text" name="email" placeholder="Email" class="frame__size size">
-                        <select name="text" class="frame__size size">
-                            <option  value="hide" class="frame__size size">Деятельность</option>
-                            <option value="programmer" class="box__list">Программист</option>
-                            <option value="designer" class="box__list">Дизайнер</option>
-                            <option value="marketer" class="box__list">Маркетолог</option>
-                        </select>
-                        <button type="submit" class="size button">Записаться на курс</button>
-                    </section>
-                    <div class="form_checkbox">
-                        <input type="checkbox" class="custom-checkbox" id="consent" name="consent" value="yes">
-                        <label for="consent" >Согласен получать информационные материалы о старте курса</label>
-                    </div>
-                </form>
-            </div>
+        <div class="box__wrapper">
+            <form action="php/hander.php" method="get" class="forms">
+                <section class="form">
+                    <input type="text" name="name" placeholder="Ваше имя" class="frame__size size">
+                    <input type="text" name="email" placeholder="Email" class="frame__size size">
+                    <select name="text" class="frame__size size">
+                        <option value="hide" class="frame__size size">Деятельность</option>
+                        <option value="programmer" class="box__list">Программист</option>
+                        <option value="designer" class="box__list">Дизайнер</option>
+                        <option value="marketer" class="box__list">Маркетолог</option>
+                    </select>
+                    <button type="submit" class="size button">Записаться на курс</button>
+                </section>
+                <div class="form_checkbox">
+                    <input type="checkbox" class="custom-checkbox" id="consent" name="consent" value="yes">
+                    <label for="consent">Согласен получать информационные материалы о старте курса</label>
+                </div>
+            </form>
+        </div>
     </section>
-    <section class="about center">
+    <section id="author" class="about center">
         <img src="img/faсe.jpg" alt="photo" class="about__img">
         <h3 class="name">Дональд Рос</h3>
         <p class="">Типограф, творческий предприниматель и лектор Королевской академии искусств Нидерландов</p>
@@ -160,6 +161,10 @@
     <footer class="footer">
         <p class="footer__logo logo">Don`t <span class="colortext">do</span> it</p>
     </footer>
+    <a href="" id="buttonUp" class="arrow__up"><img src="img/vector.svg" alt=""></a>
+    <div class="overlay"></div>
+    <div class="popup">
+        <a href="#" class="close-button"><img src="img/close.svg" alt="x"></a>
+    </div>
     <script src="js/app.js"></script>
-</body>
-</html>
+</body></html>
