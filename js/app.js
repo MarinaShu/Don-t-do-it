@@ -1,5 +1,5 @@
-const button = document.querySelector('#buttonUp');
-button.addEventListener('click', scrollToStart);
+const buttonUp = document.querySelector('#buttonUp');
+buttonUp.addEventListener('click', scrollToStart);
 
 function scrollToStart(event) {
     event.preventDefault();
@@ -10,7 +10,6 @@ function scrollToStart(event) {
     })
 }
 
-
 window.addEventListener('scroll', (event) => {
     const button = document.querySelector('#buttonUp');
     const topOfSet = 400;
@@ -20,8 +19,6 @@ window.addEventListener('scroll', (event) => {
         button.classList.remove('visible')
     }
 })
-
-
 
 const smoothLinks = document.querySelectorAll('.js-menu-item');
 smoothLinks.forEach(smoothLink => {
@@ -35,6 +32,102 @@ smoothLinks.forEach(smoothLink => {
         });
     })
 })
+//
+// const popupLinks = document.querySelectorAll('.js-button')
+// let unlock = true;
+//
+// if (popupLinks.length > 0) {
+//     for (let index = 0; index < popupLinks.length; index++){
+//         const  popupLink = popupLinks[index];
+//         popupLink.addEventListener('click', function (e){
+//             const popupName = popupLink.getAttribute('href').replace('#','');
+//             const curentPopup = document.getElementById(popupName);
+//             popupOpen(curentPopup);
+//             e.preventDefault();
+//         })
+//     }
+// }
+//
+// const  popupCloseIcon = document.querySelectorAll('.js-close');
+// if (popupCloseIcon.length >0 ) {
+//     for (let index = 0; index < popupCloseIcon.length; index++) {
+//         const el = popupCloseIcon[index];
+//         el.addEventListener('click', function (e) {
+//             popupClose(el.closest('.popup'));
+//             e.preventDefault();
+//         });
+//     }
+// }
+//
+// function popupOpen(curentPopup) {
+//     if (curentPopup && unlock){
+//         curentPopup.classList.add('open');
+//         curentPopup.addEventListener('click', function (e) {
+//             if (!e.target.closest('.popup__content')) {
+//                 popupClose(e.target.closest('.popup'));
+//         }});
+//     }
+// }
+//
+// const burger = document.querySelector('.header__burger');
+// burger.addEventListener('click', (event) => {
+//     if (window.pageYOffset > topOfSet) {
+//         button.classList.add('visible');
+//     } else {
+//         button.classList.remove('visible')
+//     }
+// })
+
+
+//  Получите модальный
+const modal = document.getElementById('js_popup');
+
+//  Получите кнопку, открывающую модальное окно
+const btn = document.getElementsByClassName("js_button")[0];
+
+//  Получите элемент <span>, закрывающий модальный
+const span = document.getElementsByClassName("close")[0];
+
+// Когда пользователь нажимает кнопку, открывается модальный
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+//Когда пользователь нажимает <span> (x), закройте модальный
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Когда пользователь щелкает где-нибудь за пределами модального окна, закройте его.
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -11,23 +11,28 @@
 
 <body>
     <header class="header">
-        <div class="header__wrapper">
-            <div class="header__logo logo"> Don`t <span class="colortext">do</span> it </div>
-            <nav class="menu">
-                <a href="#box" class="menu__link js-menu-item"> Что будет на курсе?</a>
-                <a href="#questions" class="menu__link js-menu-item"> Вопросы</a>
-                <a href="#author" class="menu__link js-menu-item"> Автор</a>
-                <a class="menu__button button"> Записаться на курс</a>
-            </nav>
-            <!--            <div class="menu__burger"></div>-->
+        <div class="container">
+            <div class="header__body">
+                <div class="header__logo logo"> Don`t <span class="colortext">do</span> it </div>
+                 <div class="header__burger" id="header__burger">
+                     <span></span>
+                 </div>
+                <nav class="header__menu">
+                    <a href="#box" class="menu__link js-menu-item"> Что будет на курсе?</a>
+                    <a href="#questions" class="menu__link js-menu-item"> Вопросы</a>
+                    <a href="#author" class="menu__link js-menu-item"> Автор</a>
+                    <button href="#popup" class="menu__button button js_button"> Записаться на курс</button>
+                </nav>
+            </div>
         </div>
+
     </header>
     <section class="content">
         <div class="content__wrapper">
             <div class="content__title">
                 <h1 class="content__text">Не <span class="colortext">делай</span> это</h1>
                 <p class="content__text text"> Онлайн-курс для творческих людей, о том, как управлять своим временем </p>
-                <div class="content__button button">Записаться на курс</div>
+                <button href="#popup" class="content__button button js-button">Записаться на курс</button>
             </div>
             <div class="content__img">
                 <img src="img/done.svg" alt="">
@@ -108,15 +113,12 @@
                 <div class="block__item__line"></div>
             </div>
             <div class="block__item__plus plus"> </div>
-
-
             <div class="block__list__two">
                 <h3 class="block__item__middle middle ">Можно получить все уроки сразу?</h3>
                 <p class="block__item__text"></p>
                 <div class="block__item__line"></div>
             </div>
             <div class="block__item__plus"> </div>
-
             <div class="block__list__three">
                 <h3 class="block__item__middle middle ">Если занятия не придут?</h3>
                 <p class="block__item__text "></p>
@@ -138,7 +140,7 @@
                         <option value="designer" class="box__list">Дизайнер</option>
                         <option value="marketer" class="box__list">Маркетолог</option>
                     </select>
-                    <button type="submit" class="size button">Записаться на курс</button>
+                    <button href="#popup" type="submit" class="size button js-button">Записаться на курс</button>
                 </section>
                 <div class="form_checkbox">
                     <input type="checkbox" class="custom-checkbox" id="consent" name="consent" value="yes">
@@ -162,9 +164,34 @@
         <p class="footer__logo logo">Don`t <span class="colortext">do</span> it</p>
     </footer>
     <a href="" id="buttonUp" class="arrow__up"><img src="img/vector.svg" alt=""></a>
-    <div class="overlay"></div>
-    <div class="popup">
-        <a href="#" class="close-button"><img src="img/close.svg" alt="x"></a>
+
+    <div id="js_popup" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <span class="close">×</span>
+                <div class="center"><img src="img/spase.svg" alt=""></div>
+                <h3 class="popup__text center">Записаться на курс</h3>
+                <form action="php/hander.php" method="get" class="popup__center">
+                    <section class="popup__form">
+                        <input type="text" name="name" placeholder="Ваше имя" class="popup__size size">
+                        <input type="text" name="email" placeholder="Email" class="popup__size size">
+                        <select name="text" class="popup__size size">
+                            <option value="hide" class="popup__size size">Деятельность</option>
+                            <option value="programmer" class="box__list">Программист</option>
+                            <option value="designer" class="box__list">Дизайнер</option>
+                            <option value="marketer" class="box__list">Маркетолог</option>
+                        </select>
+                        <div class="popup_checkbox">
+                            <input type="checkbox" class="custom-checkbox" id="popup__consent" name="consent" value="yes">
+                            <label for="consent">Согласен получать информационные материалы о старте курса</label>
+                        </div>
+                        <a href="#" type="submit" class="popup__size size button ">Записаться на курс</a>
+                    </section>
+                </form>
+            </div>
+        </div>
     </div>
+
     <script src="js/app.js"></script>
-</body></html>
+</body>
+</html>
