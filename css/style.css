@@ -19,13 +19,16 @@ p {
     font: 400 normal 18px/116.6% 'Roboto Condensed', sans-serif;
 }
 
+
 .colortext {
     color: #E71096;
 }
-.header:before{
+
+.header:before {
     position: absolute;
     z-index: 2;
 }
+
 .logo {
     font: normal bold 30.8px/122.33% 'Montserrat', sans-serif;
     position: relative;
@@ -158,6 +161,10 @@ p {
     text-align: center;
 }
 
+.color {
+    color: white;
+}
+
 .box__wrapper {
     display: flex;
     align-items: center;
@@ -271,6 +278,10 @@ p {
     height: 1px;
     background: #000000;
     background-repeat: no-repeat;
+}
+
+.box__text {
+    padding: 60px 0 125px;
 }
 
 .box__text_big {
@@ -458,7 +469,7 @@ p {
     cursor: pointer;
 }
 
-.popup__form{
+.popup__form {
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -482,13 +493,14 @@ p {
     text-align: center;
 }
 
-.popup_checkbox{
+.popup_checkbox {
     padding: 10px 0;
 }
 
-.popup__text{
+.popup__text {
     padding: 17px 0;
 }
+
 @media screen and (max-width: 1525px) {
     .content__text {
         max-width: 300px;

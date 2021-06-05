@@ -1,10 +1,10 @@
-
-const animItems=document.querySelectorAll('._anim-items');
+const animItems = document.querySelectorAll('._anim-items');
 
 if (animItems.length > 0) {
     window.addEventListener('scroll', animOnScroll);
+
     function animOnScroll(params) {
-        for (let index = 0; index < animItems.length; index++){
+        for (let index = 0; index < animItems.length; index++) {
             const animItem = animItems[index];
             const animItemHeight = animItem.offsetHeight;
             const animItemOffset = offset(animItem).top;
@@ -17,7 +17,7 @@ if (animItems.length > 0) {
 
             if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemPoint + animItemHeight)) {
                 animItem.classList.add('_active');
-            }else {
+            } else {
                 if (!animItem.classList.contains('_anim-no-hide')) {
                     animItem.classList.remove('_active');
                 }
@@ -25,11 +25,35 @@ if (animItems.length > 0) {
 
         }
     }
+
     function offset(el) {
         const rect = el.getBoundingClientRect(),
             scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
             scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+        return {
+            top: rect.top + scrollTop,
+            left: rect.left + scrollLeft
+        }
     }
     animOnScroll();
 }
+
+
+
+document.addEventListener('submit', (Event) => {
+            Event.preventDefault();
+
+            const form = Event.target;
+            fetch(form.action, {
+                    metod: form.metod,
+                    body: new FormData(form),
+                })
+                .then(response => respons.json())
+                .then(result => {
+                    if (result === 1) {
+                        form.perentNode.querySelector('[data-result="success"]').classList.remove('hidden')
+                    } else {
+                        form.parentNode.querySelector('[data-result="error"]').classList.remove('hidden')
+                    }
+                })
+                .catch(err => {});
