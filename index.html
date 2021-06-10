@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
@@ -12,30 +13,29 @@
 <body>
     <header class="header">
         <div class="container">
-            <div class="header__body">
+            <div class="header__body body">
                 <div class="header__logo logo"> Don`t <span class="colortext">do</span> it </div>
-                 <div class="header__burger" id="header__burger">
-                     <span></span>
-                 </div>
+                <div class="header__burger" id="header__burger">
+                    <span></span>
+                </div>
                 <nav class="header__menu">
                     <a href="#box" class="menu__link js-menu-item"> Что будет на курсе?</a>
                     <a href="#questions" class="menu__link js-menu-item"> Вопросы</a>
                     <a href="#author" class="menu__link js-menu-item"> Автор</a>
-                    <button href="#popup" class="menu__button button js_button"> Записаться на курс</button>
+                    <a href="#" class="menu__button button js_button"> Записаться на курс</a>
                 </nav>
             </div>
         </div>
-
     </header>
     <section class="content">
-        <div class="content__wrapper">
+        <div class="content__body body">
             <div class="content__title">
                 <h1 class="content__text">Не <span class="colortext">делай</span> это</h1>
                 <p class="content__text text"> Онлайн-курс для творческих людей, о том, как управлять своим временем </p>
-                <button href="#popup" class="content__button button js-button">Записаться на курс</button>
+                <a href="#popup" class="content__button button js_button">Записаться на курс</a>
             </div>
-            <div class="content__img">
-                <img src="img/done.svg" alt="">
+            <div>
+                <img class="content__img" src="img/done.svg" alt="">
             </div>
         </div>
     </section>
@@ -104,43 +104,52 @@
             </div>
         </div>
     </section>
+
+
     <section id="questions" class="block">
         <h2 class="center">Всё, что вы хотели <span class="colortext">узнать</span></h2>
         <div class="block__down-menu">
+
+            <?php
+    $articles = [
+        [
+            'title' => 'Как проходит курс?',
+            'text' => 'Каждую неделю на протяжении 3 месяцев, вам приходит новый урок на имейл. Проходить уроки, вы можете в комфортном для вас темпе.',
+        ],
+        [
+            'title' => 'Можно получить все уроки сразу?',
+            'text' => 'Каждую неделю на протяжении 3 месяцев, вам приходит новый урок на имейл. Проходить уроки, вы можете в комфортном для вас темпе.',
+        ],
+        [
+            'title' => 'Если занятия не придут?',
+            'text' => 'Каждую неделю на протяжении 3 месяцев, вам приходит новый урок на имейл. Проходить уроки, вы можете в комфортном для вас темпе.',
+        ],
+    ];
+?>
+            <?php foreach ($articles as $article): ?>
             <div class="block__list__one">
-                <h3 class="block__item__middle middle">Как проходит курс?</h3>
-                <p class="block__item__text"> Каждую неделю на протяжении 3 месяцев, вам приходит новый урок на имейл. Проходить уроки, вы можете в комфортном для вас темпе.</p>
+                <h3 class="block__item__middle middle"><?= $article['title'] ?></h3>
+                <p class="block__item__text"><?= $article['text'] ?></p>
                 <div class="block__item__line"></div>
             </div>
             <div class="block__item__plus plus"> </div>
-            <div class="block__list__two">
-                <h3 class="block__item__middle middle ">Можно получить все уроки сразу?</h3>
-                <p class="block__item__text"></p>
-                <div class="block__item__line"></div>
-            </div>
-            <div class="block__item__plus"> </div>
-            <div class="block__list__three">
-                <h3 class="block__item__middle middle ">Если занятия не придут?</h3>
-                <p class="block__item__text "></p>
-                <div class="block__item__line"></div>
-            </div>
-            <div class="block__item__plus"> </div>
+            <?php endforeach; ?>
         </div>
     </section>
     <section class="box__black">
         <h2 class="box__text_big center">Единственное, что нужно <span class="colortext">сделать</span></h2>
         <div class="box__wrapper">
-            <form action="php/hander.php" method="get" class="forms">
+            <form action="/php/form_handler.php" method="post" class="forms">
                 <section class="form">
                     <input type="text" name="name" placeholder="Ваше имя" class="frame__size size">
-                    <input type="text" name="email" placeholder="Email" class="frame__size size">
+                    <input type="text" name="email" placeholder="Email" class="frame__size size email">
                     <select name="text" class="frame__size size">
                         <option value="hide" class="frame__size size">Деятельность</option>
                         <option value="programmer" class="box__list">Программист</option>
                         <option value="designer" class="box__list">Дизайнер</option>
                         <option value="marketer" class="box__list">Маркетолог</option>
                     </select>
-                    <button href="#popup" type="submit" class="size button js-button">Записаться на курс</button>
+                    <a href="#popup" type="submit" class="size button js_button">Записаться на курс</a>
                 </section>
                 <div class="form_checkbox">
                     <input type="checkbox" class="custom-checkbox" id="consent" name="consent" value="yes">
@@ -168,7 +177,7 @@
     <div id="js_popup" class="popup">
         <div class="popup__body">
             <div class="popup__content">
-                <span class="close">×</span>
+                <span id="close">×</span>
                 <div class="center"><img src="img/spase.svg" alt=""></div>
                 <h3 class="popup__text center">Записаться на курс</h3>
                 <form action="php/hander.php" method="get" class="popup__center">
@@ -191,7 +200,7 @@
             </div>
         </div>
     </div>
-
     <script src="js/app.js"></script>
 </body>
+
 </html>
