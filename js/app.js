@@ -32,103 +32,24 @@ smoothLinks.forEach(smoothLink => {
         });
     })
 })
-//
-// const popupLinks = document.querySelectorAll('.js-button')
-// let unlock = true;
-//
-// if (popupLinks.length > 0) {
-//     for (let index = 0; index < popupLinks.length; index++){
-//         const  popupLink = popupLinks[index];
-//         popupLink.addEventListener('click', function (e){
-//             const popupName = popupLink.getAttribute('href').replace('#','');
-//             const curentPopup = document.getElementById(popupName);
-//             popupOpen(curentPopup);
-//             e.preventDefault();
-//         })
-//     }
-// }
-//
-// const  popupCloseIcon = document.querySelectorAll('.js-close');
-// if (popupCloseIcon.length >0 ) {
-//     for (let index = 0; index < popupCloseIcon.length; index++) {
-//         const el = popupCloseIcon[index];
-//         el.addEventListener('click', function (e) {
-//             popupClose(el.closest('.popup'));
-//             e.preventDefault();
-//         });
-//     }
-// }
-//
-// function popupOpen(curentPopup) {
-//     if (curentPopup && unlock){
-//         curentPopup.classList.add('open');
-//         curentPopup.addEventListener('click', function (e) {
-//             if (!e.target.closest('.popup__content')) {
-//                 popupClose(e.target.closest('.popup'));
-//         }});
-//     }
-// }
-//
-// const burger = document.querySelector('.header__burger');
-// burger.addEventListener('click', (event) => {
-//     if (window.pageYOffset > topOfSet) {
-//         button.classList.add('visible');
-//     } else {
-//         button.classList.remove('visible')
-//     }
-// })
 
+const buttons = document.querySelectorAll('.js_button');
+console.log(buttons)
+buttons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        console.log(event);
+        event.target.classList.add('active');
+    })
+})
+const span = document.querySelector('#close');
+const modal = document.querySelector('#js_popup');
+modal.addEventListener('click', (event) => {
+    console.log(event);
+    event.target.classList.remove('active');})
 
-//  Получите модальный
-const modal = document.getElementById('js_popup');
-
-//  Получите кнопку, открывающую модальное окно
-const btn = document.getElementsByClassName("js_button")[0];
-
-//  Получите элемент <span>, закрывающий модальный
-const span = document.getElementsByClassName("close")[0];
-
-// Когда пользователь нажимает кнопку, открывается модальный
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-//Когда пользователь нажимает <span> (x), закройте модальный
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// Когда пользователь щелкает где-нибудь за пределами модального окна, закройте его.
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+span.addEventListener('click', (event) => {
+    console.log(event);
+    event.target.classList.remove('active');})
 
 
 
